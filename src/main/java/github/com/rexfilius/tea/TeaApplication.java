@@ -18,8 +18,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
                 )
         ),
         externalDocs = @ExternalDocumentation(
-                description = "Tea (GitHub)",
-                url = "github-url-here"
+                description = "Tea (GitHub Repo)",
+                url = "https://github.com/rexfilius/tea"
         )
 )
 @SpringBootApplication
@@ -27,20 +27,5 @@ public class TeaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TeaApplication.class, args);
-        System.out.println("=======Tea application started========");
     }
-
-//    @Autowired
-//    private RoleRepository roleRepository;
-
-//    @Override
-//    public void run(String... args) throws Exception {
-//        Role adminRole = new Role();
-//        adminRole.setName("ROLE_ADMIN");
-//        roleRepository.save(adminRole);
-//
-//        Role userRole = new Role();
-//        userRole.setName("ROLE_USER");
-//        roleRepository.save(userRole);
-//    }
 }

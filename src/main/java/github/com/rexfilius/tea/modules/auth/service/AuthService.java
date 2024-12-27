@@ -61,16 +61,27 @@ public class AuthService {
             throw new TeaApiException(HttpStatus.BAD_REQUEST, "Email is already taken");
         }
 
-        User user  = new User();
-        user.setName(registerDto.getUsername());
+        User user = new User();
+        user.setName(registerDto.getName());
         user.setUsername(registerDto.getUsername());
         user.setEmail(registerDto.getEmail());
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
+        System.out.println("isAdmin from DTO: " + registerDto.isAdmin());
+        user.setAdmin(registerDto.isAdmin());
+        System.out.println("user: " + user);
 
-        Set<Role> roles = new HashSet<>();
-        Role userRole = roleRepository.findByName("ROLE_USER").get();
-        roles.add(userRole);
-        user.setRoles(roles);
+        Role role;
+        if (user.isAdmin()) {
+            role = roleRepository.findByName("ROLE_ADMIN")
+                    .orElseThrow(() -> new TeaApiException(HttpStatus.NOT_FOUND, "Admin role not found"));
+            System.out.println("role from db: suppose admin role: " + role);
+        } else {
+            role = roleRepository.findByName("ROLE_USER")
+                    .orElseThrow(() -> new TeaApiException(HttpStatus.NOT_FOUND, "User role not found"));
+            System.out.println("role from db: suppose user role: " + role);
+        }
+        user.setRole(role);
+        System.out.println("user after setting role: " + user);
 
         userRepository.save(user);
         return "User registered successfully";

@@ -1,9 +1,7 @@
 package github.com.rexfilius.tea.exception;
 
-import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-@Getter
 public class TeaApiException extends RuntimeException {
     private final HttpStatus status;
     private final String message;
@@ -19,12 +17,12 @@ public class TeaApiException extends RuntimeException {
         this.message = message1;
     }
 
-//    public HttpStatus getStatus() {
-//        return status;
-//    }
-//
-//    @Override
-//    public String getMessage() {
-//        return message;
-//    }
+    public HttpStatus getStatus() {
+        return status;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
 }
