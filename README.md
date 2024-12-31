@@ -9,30 +9,27 @@ This is a RESTful API built using Spring Boot for a Blog Application that suppor
 - **User Login:** Users can log in to receive a JWT access token for subsequent API calls.
 - **Role-Based Security:** Admin and user roles are implemented to restrict access to specific endpoints.
 
-### Blog Post Management
-- **Endpoints:**
-  - Create a post
-  - Get a single post
-  - Get all posts
-  - Update a post
-  - Delete a post
-  - Get all posts under a ctegory
+### Post Management
+- Create a post
+- Get a single post
+- Get all posts
+- Update a post
+- Delete a post
+- Get all posts under a ctegory
 
 ### Comment Management
-- **Endpoints:**
-  - Create a comment
-  - Get a single comment
-  - Get all comments
-  - Update a comment
-  - Delete a comment
+- Create a comment
+- Get a single comment
+- Get all comments
+- Update a comment
+- Delete a comment
 
 ### Category Management
-- **Endpoints:**
-  - Create a category (admin only)
-  - Get a single category
-  - Get all categories
-  - Update a category (admin only)
-  - Delete a category (admin only)
+- Create a category (admin only)
+- Get a single category
+- Get all categories
+- Update a category (admin only)
+- Delete a category (admin only)
  
 ### Entity Relationships
 - A category can have many posts.
