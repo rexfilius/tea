@@ -5,7 +5,8 @@ This is a RESTful API built using Spring Boot for a Blog Application that suppor
 ## Features
 
 ### Authentication and Authorization
-- **User Registration:** Users can sign up and choose one of two roles: `admin` or `user`.
+- **User Registration:** Users can sign up and choose one of two roles: `admin` or `user`. A verification code is
+also sent to user's email to verify account.
 - **User Login:** Users can log in to receive a JWT access token for subsequent API calls.
 - **Role-Based Security:** Admin and user roles are implemented to restrict access to specific endpoints.
 
@@ -15,7 +16,7 @@ This is a RESTful API built using Spring Boot for a Blog Application that suppor
 - Get all posts
 - Update a post
 - Delete a post
-- Get all posts under a ctegory
+- Get all posts under a category
 
 ### Comment Management
 - Create a comment
@@ -42,13 +43,15 @@ This is a RESTful API built using Spring Boot for a Blog Application that suppor
 - **Role-Based Access Control:** Admin-exclusive endpoints are restricted.
 
 ### Additional Features
-- **Live Swagger Documentation:** You can access the swagger documentaion for this api here [docs](http://tea-rest-api-env.eba-grfhpa2h.us-east-1.elasticbeanstalk.com/swagger-ui/index.html)
+- **Live Swagger Documentation:** You can access the swagger documentation for this api here [docs](http://tea-rest-api-env.eba-grfhpa2h.us-east-1.elasticbeanstalk.com/swagger-ui/index.html)
 
 ## API Endpoints
 
 ### Authentication
 - `POST /v1/auth/register` - Register a new user.
 - `POST /v1/auth/login` - Log in and receive a JWT token.
+- `POST /v1/auth/verify` - Verify a new user.
+- `POST /v1/auth/resend/{email}` - Resend verification code.
 
 ### Posts
 - `POST /v1/posts` - Create a new post.

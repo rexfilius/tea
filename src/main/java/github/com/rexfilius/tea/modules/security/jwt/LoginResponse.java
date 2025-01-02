@@ -1,6 +1,6 @@
 package github.com.rexfilius.tea.modules.security.jwt;
 
-public class JwtAuthResponse {
+public class LoginResponse {
     private String accessToken;
     private String tokenType = "Bearer";
 

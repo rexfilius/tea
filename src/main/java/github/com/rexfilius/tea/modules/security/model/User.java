@@ -2,6 +2,7 @@ package github.com.rexfilius.tea.modules.security.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
@@ -30,6 +31,14 @@ public class User {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
+    @Column(name = "verification_code")
+    private String verificationCode;
+
+    @Column(name = "verification_expiration")
+    private LocalDateTime verificationCodeExpiresAt;
+
+    private boolean enabled;
+
     @Override
     public String toString() {
         return "User{" +
@@ -40,7 +49,34 @@ public class User {
                 ", password='" + password + '\'' +
                 ", isAdmin=" + isAdmin +
                 ", role=" + role +
+                ", verificationCode='" + verificationCode + '\'' +
+                ", verificationCodeExpiresAt=" + verificationCodeExpiresAt +
+                ", enabled=" + enabled +
                 '}';
+    }
+
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
+
+    public LocalDateTime getVerificationCodeExpiresAt() {
+        return verificationCodeExpiresAt;
+    }
+
+    public void setVerificationCodeExpiresAt(LocalDateTime verificationCodeExpiresAt) {
+        this.verificationCodeExpiresAt = verificationCodeExpiresAt;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public Long getId() {
