@@ -42,8 +42,9 @@ also sent to user's email to verify account.
 - **JWT Authentication:** All API calls are secured using JWT tokens.
 - **Role-Based Access Control:** Admin-exclusive endpoints are restricted.
 
-### Additional Features
-- **Live Swagger Documentation:** You can access the swagger documentation for this api here [docs](http://tea-rest-api-env.eba-grfhpa2h.us-east-1.elasticbeanstalk.com/swagger-ui/index.html)
+[//]: # (### Additional Features)
+
+[//]: # (- **Live Swagger Documentation:** You can access the swagger documentation for this api here [docs]&#40;http://tea-rest-api-env.eba-grfhpa2h.us-east-1.elasticbeanstalk.com/swagger-ui/index.html&#41;)
 
 ## API Endpoints
 
